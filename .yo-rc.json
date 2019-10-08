@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "alexanderkrum",
+      "authorEmail": "alexander.krum.it@gmail.com",
+      "authorUrl": "https://alexanderkrum.github.io/"
+    }
+  }
+}
