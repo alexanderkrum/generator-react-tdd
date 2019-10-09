@@ -1,0 +1,72 @@
+{
+  "name": "react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clean:test": "rm -rf coverage test",
+    "test:ci": "CI=true yarn test --coverage --silent",
+    "lint": "eslint src",
+    "format": "yarn run prettier -- --write",
+    "prettier": "prettier App.js \"**/src/**/*.+(js|jsx|json)\" \"**/__tests__/**/*.+(js|jsx|json)\"",
+    "validate": "yarn lint && yarn prettier -- --list-different"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test:ci && yarn clean:test"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

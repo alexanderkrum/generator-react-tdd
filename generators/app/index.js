@@ -1,38 +1,37 @@
-'use strict';
-const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
+"use strict";
+const Generator = require("yeoman-generator");
+const chalk = require("chalk");
+const yosay = require("yosay");
+const clone = require("git-clone");
+
 
 module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
-    this.log(
-      yosay(`Welcome to the cool ${chalk.red('generator-react-tdd')} generator!`)
-    );
+    this.log(yosay(`Welcome to the cool ${chalk.red("react-tdd")} generator!`));
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: "input",
+        name: "projectName",
+        message: "Your project name",
+        default: this.appname
       }
     ];
 
     return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
       this.props = props;
     });
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+    this.fs.copyTpl(
+      this.sourceRoot(),
+      this.destinationPath(`${this.props.projectName}`),
+      { title: "Create project folder" }
     );
   }
 
   install() {
-    this.installDependencies();
+    this.yarnInstall();
   }
 };
