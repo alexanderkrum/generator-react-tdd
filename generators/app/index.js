@@ -30,8 +30,4 @@ module.exports = class extends Generator {
       { title: "Create project folder" }
     );
   }
-
-  install() {
-    this.yarnInstall();
-  }
 };
