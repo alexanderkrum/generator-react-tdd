@@ -2,7 +2,7 @@
   "name": "generator-react-tdd",
   "version": "1.0.0",
   "description": "A lightweight react template. A simple start with linting, formating and testing. ",
-  "homepage": "https://github.com/alexanderkrum/react-app",
+  "homepage": "https://github.com/alexanderkrum/generator-react-tdd",
   "author": {
     "name": "alexanderkrum",
     "email": "alexander.krum.it@gmail.com",
