@@ -2,8 +2,6 @@
 const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const yosay = require("yosay");
-const clone = require("git-clone");
-
 
 module.exports = class extends Generator {
   prompting() {
@@ -27,7 +25,9 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.sourceRoot(),
       this.destinationPath(`${this.props.projectName}`),
-      { title: "Create project folder" }
+      null,
+      null,
+      { globOptions: { dot: true } }
     );
   }
 };
