@@ -28,7 +28,7 @@ module.exports = class extends Generator {
 
   writing() {
     const destination = relativeDestination(
-      `src/components/Molecules/${this.props.moleculeName}`
+      `src/components/molecules/${this.props.moleculeName}`
     );
     this.fs.copyTpl(this.sourceRoot(), this.destinationPath(`${destination}`), {
       name: this.props.moleculeName
