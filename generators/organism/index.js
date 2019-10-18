@@ -1,6 +1,15 @@
 "use strict";
-const relativeDestination = require("../../domain/path");
 const Generator = require("yeoman-generator");
+
+const relativeDestination = relativePath => {
+  const path = process.cwd();
+  const directories = relativePath.split("/");
+  const mergedRelativePath = directories
+    .filter(d => !path.includes(d))
+    .join("/");
+
+  return path.concat("/") + mergedRelativePath;
+};
 
 module.exports = class extends Generator {
   prompting() {

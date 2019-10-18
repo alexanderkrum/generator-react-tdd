@@ -1,7 +1,5 @@
-const absolutePath = require("../absolutePath");
-
 const relativeDestination = relativePath => {
-  const path = absolutePath();
+  const path = process.cwd();
   const directories = relativePath.split("/");
   const mergedRelativePath = directories
     .filter(d => !path.includes(d))
