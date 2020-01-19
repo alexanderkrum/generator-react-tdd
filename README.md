@@ -9,19 +9,81 @@ First, install [Yeoman](http://yeoman.io) and generator-react-tdd using [npm](ht
 npm install -g yo
 npm install -g generator-react-tdd
 ```
-
-Then generate your new project:
-
+## Main command
 ```bash
 yo react-tdd
 ```
 
-## Getting To Know Yeoman
+## Existing sub commands (explained below)
+```bash
+yo react-tdd:atom
+yo react-tdd:molucule
+yo react-tdd:organism
+yo react-tdd:page
+```
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+
+## Project generation
+
+## 1. Generate an react project
+    
+    ```yo react-tdd```
+
+Enter the name of the project in capital case
+```bash
+? Your project name (TEMP): Myproject
+``` 
+
+### 1.1
+Init the project:
+
+```bash
+git init
+yarn install
+```
+### 1.2
+
+    
+### 2. Adding components
+>I prefer to split my components on their size.
+I have chosen to follow the [Atomic design](http://atomicdesign.bradfrost.com/chapter-2/) format.
+Based on this design pattern I would sort my components
+in folders atom, molecules, organisms and pages. 
+
+#### 2.1 The command structure for components generation is the follow.
+
+```yo react-tdd:<component type>``` 
+>For example you want to create an atom. Then you have
+ to execute 
+
+```yo react-tdd:atom```
+
+The prompt will reply:
+
+```? Atom module name: ```
+
+Enter the component name with capital case.
+
+### Scripts
+#### 1. start development server
+```bash
+yarn start
+```
+
+#### 2. test
+```bash
+yarn test
+```
+
+#### 3. start storybook
+```bash
+yarn storybook
+```
+
+#### 4. test with coverage
+```bash
+yarn test:ci
+```
 
 ## License
 
