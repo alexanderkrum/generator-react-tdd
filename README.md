@@ -17,7 +17,7 @@ yo react-tdd
 ## Existing sub commands (explained below)
 ```bash
 yo react-tdd:atom
-yo react-tdd:molucule
+yo react-tdd:molecule
 yo react-tdd:organism
 yo react-tdd:page
 ```
