@@ -17,17 +17,20 @@ yo react-tdd
 ## Existing sub commands (explained below)
 ```bash
 yo react-tdd:atom
-yo react-tdd:molucule
+yo react-tdd:molecule
 yo react-tdd:organism
 yo react-tdd:page
 ```
+
 
 
 ## Project generation
 
 ## 1. Generate an react project
     
-    ```yo react-tdd```
+```bash 
+yo react-tdd
+```
 
 Enter the name of the project in capital case
 ```bash
@@ -35,14 +38,13 @@ Enter the name of the project in capital case
 ``` 
 
 ### 1.1
-Init the project:
+Enter the created project folder. Init the git repository and install packages: 
 
 ```bash
+cd Myproject
 git init
 yarn install
 ```
-### 1.2
-
     
 ### 2. Adding components
 >I prefer to split my components on their size.
